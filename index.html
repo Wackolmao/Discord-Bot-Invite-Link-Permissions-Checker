@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Permissions Decoder</title>
+</head>
+<body style="background-image: url('/wack.png'); background-repeat: no-repeat; background-size: cover; font-family: Arial, sans-serif;">
+    <h1>Enter Discord OAuth2 Link</h1>
+    <form action="/" method="post" style="text-align: center;">
+        <input type="text" name="link" placeholder="Paste the OAuth2 link here" value="{{ link }}" style="width: 80%;">
+        <button type="submit">Decode</button>
+    </form>
+    
+    {% if permissions %}
+    <h2>Permissions:</h2>
+    <ul>
+        {% for perm in permissions %}
+        <li>{{ perm }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
